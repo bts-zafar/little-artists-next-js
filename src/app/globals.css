@@ -125,3 +125,27 @@ body {
     @apply text-lg font-normal leading-normal text-black dark:text-white;
   }
 }
+
+/* ... (keep all your existing styles) ... */
+
+/* --- Custom Cursor Styles --- */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: #C1FF72;
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none; /* Allows you to click "through" it */
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* This hides the custom cursor on mobile/touch devices */
+@media (max-width: 1024px) {
+  .cursor-dot {
+    display: none;
+  }
+}
