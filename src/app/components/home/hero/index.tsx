@@ -37,7 +37,7 @@ function HeroSection() {
             {/* --- Background Video --- */}
             <video
                 className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                src="https://regis.org/videos/background-video.mp4"
+                src="https://firebasestorage.googleapis.com/v0/b/kk-jwl-01.firebasestorage.app/o/background-video.mp4?alt=media&token=3a1b37db-b0c5-4f94-96dc-db943e667441"
                 autoPlay
                 loop
                 muted
