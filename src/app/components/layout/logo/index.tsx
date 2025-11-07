@@ -6,16 +6,16 @@ const Logo = (props: { sticky: boolean }) => {
     return (
         <Link href="/">
             <Image
-                src={sticky ? "/images/logo/sticky_logo.svg" : "/images/logo/WhiteLogo.svg"}
+                src={sticky ? "/images/logo/new-logo.png" : "/images/logo/new-logo.png"}
                 alt="logo"
-                width={190}
+                width={100}
                 height={34}
-                style={{ width: 'auto', height: 'auto' }}
+                style={{ width: '120px', height: 'auto' }}
                 quality={100}
                 priority={true}
                 className='hidden xsm:block'
             />
-            <Image src={sticky ? "/images/logo/favicondark.svg" : "/images/logo/favicon.svg"} alt='logo' width={40} height={40} className='block xsm:hidden' />
+            <Image src={sticky ? "/images/logo/new-logo.png" : "/images/logo/new-logo.png"} alt='logo' width={40} height={40} className='block xsm:hidden' />
         </Link>
     );
 };

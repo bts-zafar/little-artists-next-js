@@ -81,7 +81,7 @@ const Header = () => {
                     </div>
                     <div className="flex items-center gap-7">
                         <div className="flex item-center gap-3">
-                            <ThemeToggler />
+                            {/* <ThemeToggler /> */}
                             {user?.user || session?.user ? (
                                 <div className="relative group flex items-center justify-center">
                                     <Image
