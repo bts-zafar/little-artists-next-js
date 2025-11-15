@@ -28,7 +28,7 @@ const Resources = () => {
 
     return (
         <ParallaxProvider>
-            <section className="bg-lightgray dark:bg-[#273338] py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray py-20 md:py-40 overflow-hidden">
                 <div className="flex flex-col gap-24">
                     <div className="container">
                         <Parallax speed={-5}> {/* Added Parallax */}
@@ -37,8 +37,8 @@ const Resources = () => {
                                     <div className="flex flex-col xl:flex xl:flex-row items-start gap-8">
                                         <div className="flex items-center py-3 gap-4 md:gap-8 w-full max-w-xl">
                                             {/* Updating section number to 08 */}
-                                            <span className="bg-primary dark:text-secondary py-1.5 px-3 text-base font-medium rounded-full">08</span>
-                                            <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
+                                            <span className="bg-primary py-1.5 px-3 text-base font-medium rounded-full">08</span>
+                                            <div className="h-px w-16 bg-black/12 " />
                                             <p className="section-bedge py-1.5 px-4 rounded-full">Latest News</p>
                                         </div>
                                         <div className="flex flex-col gap-11 w-full">
@@ -47,7 +47,7 @@ const Resources = () => {
                                                 <h2 className="max-w-3xl">Latest News</h2>
                                                 <Link 
                                                     href="/blog" // Link to the blog page
-                                                    className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 flex-shrink-0"
+                                                    className="group flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300 flex-shrink-0"
                                                 >
                                                     <span className="text-sm font-bold uppercase tracking-wider">
                                                         READ MORE
@@ -55,7 +55,7 @@ const Resources = () => {
                                                     <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                                                 </Link>
                                             </div>
-                                            <p className="max-w-2xl text-secondary/70 dark:text-white/70">
+                                            <p className="max-w-2xl text-secondary/70 ">
                                                 Stay updated with the latest happenings, insights, and stories 
                                                 from the world of Little Artists.
                                             </p>
@@ -91,7 +91,7 @@ const Resources = () => {
 
                                                     {/* Text block below image */}
                                                     <div className="flex flex-col gap-1">
-                                                        <span className="text-secondary/70 dark:text-white/70">{formattedDate}</span>
+                                                        <span className="text-secondary/70 ">{formattedDate}</span>
                                                         <h4>{value.title}</h4>
                                                     </div>
                                                 </Link>

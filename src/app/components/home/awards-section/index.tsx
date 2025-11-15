@@ -31,7 +31,7 @@ const AwardsSection = () => {
 
     return (
         // Using theme's light background and standard padding
-        <section className="bg-lightgray dark:bg-secondary">
+        <section className="bg-lightgray">
             <div className="container">
                 {/* --- Section Title --- */}
                 <h2 className="text-4xl md:text-5xl text-primary text-center mb-16">
@@ -57,10 +57,10 @@ const AwardsSection = () => {
             {/* --- Text Section --- */}
             <div className="container mb-20">
                 <div className="max-w-xl flex flex-col items-start gap-4">
-                    <h3 className="text-2xl md:text-3xl text-secondary dark:text-white">
+                    <h3 className="text-2xl md:text-3xl text-secondary">
                         {awardsData.mainHeading}
                     </h3>
-                    <p className="text-lg text-secondary/70 dark:text-white/70">
+                    <p className="text-lg text-secondary/70">
                         {awardsData.subText}
                     </p>
                     {/* <Link 

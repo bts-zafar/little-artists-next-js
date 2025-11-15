@@ -66,13 +66,13 @@ function Testimonial() {
 
     // We need data to render, show a light loading state
     if (!testimonialData) {
-        return <section className="bg-lightgray dark:bg-secondary py-20 md:py-40"></section>
+        return <section className="bg-lightgray py-20 md:py-40"></section>
     }
         
     return (
         <ParallaxProvider>
             {/* Original theme background */}
-            <section className="bg-lightgray dark:bg-secondary py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray py-20 md:py-40 overflow-hidden">
                 <div className="flex flex-col gap-24">
                     {/* --- "What They Think of Us" Section (Original Layout) --- */}
                     <div className="container">
@@ -80,8 +80,8 @@ function Testimonial() {
                             <div className="flex flex-col gap-14 xl:gap-24">
                                 <div className="flex flex-col xl:flex xl:flex-row items-start gap-8">
                                     <div className="flex items-center py-3 gap-4 md:gap-8 w-full max-w-xl">
-                                        <span className="bg-primary dark:text-secondary py-1.5 px-2.5 text-base font-medium rounded-full">05</span>
-                                        <div className="h-px w-16 bg-black/12 dark:bg-white/12"/>
+                                        <span className="bg-primary py-1.5 px-2.5 text-base font-medium rounded-full">05</span>
+                                        <div className="h-px w-16 bg-black/12"/>
                                         <p className="section-bedge py-1.5 px-4 rounded-full">Testimonial</p>
                                     </div>
                                     <div className="flex flex-col gap-11 w-full">
@@ -92,7 +92,7 @@ function Testimonial() {
                                             </h2>
                                             <Link 
                                                 href="/projects" // You can change this link
-                                                className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 flex-shrink-0"
+                                                className="group flex items-center gap-2 text-primary hover:text-secondary  transition-colors duration-300 flex-shrink-0"
                                             >
                                                 <span className="text-sm font-bold uppercase tracking-wider">
                                                     VIEW MORE
@@ -122,7 +122,7 @@ function Testimonial() {
                                     </div>
                                     
                                     {/* --- Card 2 (FIXED) --- */}
-                                    <div className="xl:col-span-2 bg-secondary dark:bg-lightgray/10 p-4 lg:p-7 flex flex-col justify-between gap-6 min-h-[450px]">
+                                    <div className="xl:col-span-2 bg-secondary  p-4 lg:p-7 flex flex-col justify-between gap-6 min-h-[450px]">
                                         <div className="flex flex-col gap-6">
                                             <h4 className="text-white">{testimonialData?.data_2?.title}</h4>
                                         </div>
@@ -145,17 +145,17 @@ function Testimonial() {
                                     </div>
 
                                     {/* --- Card 3 (FIXED) --- */}
-                                    <div className="bg-white dark:bg-black/20 p-4 lg:p-7 flex flex-col justify-between gap-6 min-h-[450px]">
+                                    <div className="bg-white  p-4 lg:p-7 flex flex-col justify-between gap-6 min-h-[450px]">
                                         <div className="flex flex-col gap-6">
-                                            <h4 className="text-secondary dark:text-white">{testimonialData?.data_3?.title}</h4>
+                                            <h4 className="text-secondary ">{testimonialData?.data_3?.title}</h4>
                                         </div>
                                         <div className="flex flex-col gap-4">
                                             <StarRating count={testimonialData?.data_3?.rating} color='var(--color-primary)' />
                                             <div className="flex items-center gap-4">
                                                 <Image src={testimonialData?.data_3?.image || "/images/testimonial/testimonial_3.png"} alt={testimonialData?.data_3?.author} width={60} height={60} className="rounded-full" />
                                                 <div>
-                                                    <p className="text-secondary dark:text-white font-bold">{testimonialData?.data_3?.author}</p>
-                                                    <p className="text-secondary/70 dark:text-white/70 text-base font-normal">{testimonialData?.data_3?.company}</p>
+                                                    <p className="text-secondary  font-bold">{testimonialData?.data_3?.author}</p>
+                                                    <p className="text-secondary/70 text-base font-normal">{testimonialData?.data_3?.company}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +176,7 @@ function Testimonial() {
                                     </h2>
                                     <Link 
                                         href="/contact" // You can change this link
-                                        className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 mt-4"
+                                        className="group flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300 mt-4"
                                     >
                                         <span className="text-sm font-bold uppercase tracking-wider">
                                             ENROL NOW

@@ -58,9 +58,9 @@ const FeaturedArtists = () => {
     // Show a loading state
     if (isLoading) {
         return (
-            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
+            <section className="bg-lightgray py-20 md:py-40">
                 <div className="container">
-                    <p className="text-secondary dark:text-white">Loading artists...</p>
+                    <p className="text-secondary ">Loading artists...</p>
                 </div>
             </section>
         );
@@ -69,19 +69,19 @@ const FeaturedArtists = () => {
     // Show an error if data is missing
     if (!artistsData || !artistsData.data || artistsData.data.length === 0) {
          return (
-            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
+            <section className="bg-lightgray py-20 md:py-40">
                 <div className="container">
                      {/* --- Section Header --- */}
                      <div className="flex items-center py-3 gap-4 md:gap-8 w-full mb-6">
-                        <span className="bg-primary dark:text-secondary py-1.5 px-3 text-base font-medium rounded-full">04</span>
-                        <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
+                        <span className="bg-primary py-1.5 px-3 text-base font-medium rounded-full">04</span>
+                        <div className="h-px w-16 bg-black/12 " />
                         <p className="section-bedge py-1.5 px-4 rounded-full">
                             Featured Artists
                         </p>
                     </div>
                     {/* --- Section Title Row --- */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-16">
-                        <h2 className="text-4xl md:text-5xl max-w-lg text-secondary dark:text-white">
+                        <h2 className="text-4xl md:text-5xl max-w-lg text-secondary ">
                             {artistsData?.title || "We generate and challenge the ideas that shape our future"}
                         </h2>
                     </div>
@@ -97,14 +97,14 @@ const FeaturedArtists = () => {
     return (
         <ParallaxProvider>
             {/* Using theme's dark background */}
-            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
+            <section className="bg-lightgray py-20 md:py-40">
                 <div className="container">
                     {/* Parallax for the whole section */}
                     <Parallax speed={-5}>
                         {/* --- Section Header --- */}
                         <div className="flex items-center py-3 gap-4 md:gap-8 w-full mb-6">
-                            <span className="bg-primary dark:text-secondary py-1.5 px-3 text-base font-medium rounded-full">04</span>
-                            <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
+                            <span className="bg-primary  py-1.5 px-3 text-base font-medium rounded-full">04</span>
+                            <div className="h-px w-16 bg-black/12 " />
                             <p className="section-bedge py-1.5 px-4 rounded-full">
                                 Featured Artists
                             </p>
@@ -112,12 +112,12 @@ const FeaturedArtists = () => {
 
                         {/* --- Section Title Row --- */}
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-16">
-                            <h2 className="text-4xl md:text-5xl max-w-lg text-secondary dark:text-white">
+                            <h2 className="text-4xl md:text-5xl max-w-lg text-secondary ">
                                 {artistsData.title}
                             </h2>
                             <Link 
                                 href="/projects" // You can change this link
-                                className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 flex-shrink-0"
+                                className="group flex items-center gap-2 text-primary hover:text-secondary  transition-colors duration-300 flex-shrink-0"
                             >
                                 <span className="text-sm font-bold uppercase tracking-wider">
                                     VIEW MORE

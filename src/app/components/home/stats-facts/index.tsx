@@ -38,31 +38,31 @@ function StatsFacts() {
         // 1. Wrap the component in ParallaxProvider
         <ParallaxProvider>
             {/* Kept original theme's bg colors and overflow-hidden */}
-            <section className="relative bg-lightgray dark:bg-secondary overflow-hidden">
+            <section className="relative bg-lightgray overflow-hidden">
                 <div className="relative py-20 md:py-40 z-10">
                     <div className="container">
                         <div className="flex flex-col xl:flex xl:flex-row items-start gap-8">
                             <div className="flex items-center py-3 gap-4 md:gap-8 w-full max-w-xl">
-                                <span className="bg-primary py-1.5 px-2.5 text-base font-medium rounded-full dark:text-secondary">{statsFactData && statsFactData?.number}</span>
-                                <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
+                                <span className="bg-primary py-1.5 px-2.5 text-base font-medium rounded-full ">{statsFactData && statsFactData?.number}</span>
+                                <div className="h-px w-16 bg-black/12 " />
                                 <p className="section-bedge py-1.5 px-4 rounded-full">{statsFactData && statsFactData?.name}</p>
                             </div>
                             <div className="flex flex-col gap-11">
                                 <div className="flex flex-col gap-5 ">
                                     <h2 className="max-w-3xl">{statsFactData?.heading}</h2>
-                                    <p className="max-w-xl text-secondary/70 dark:text-white/70">{statsFactData?.description}</p>
+                                    <p className="max-w-xl text-secondary/70 /70">{statsFactData?.description}</p>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                                     {statsFactData && statsFactData?.scoreData?.map((value: any, index: any) => {
                                         return (
-                                            <div ref={ref} key={index} className="flex flex-col gap-5 pt-4 md:pt-11 border-t border-secondary/12 dark:border-white/12">
+                                            <div ref={ref} key={index} className="flex flex-col gap-5 pt-4 md:pt-11 border-t border-secondary/12 ">
                                                 <h3 className="text-5xl md:text-6xl Xxl:text-7xl font-bold">
                                                     {inView ? <CountUp start={0} end={value.number} duration={3} /> : "0"}
                                                     {value.numberValue && <span>{value.numberValue}</span>}
                                                     {/* Only add '+' if no other suffix is present */}
                                                     {!value.numberValue && <span>+</span>}
                                                 </h3>
-                                                <p className="text-base text-secondary/70 dark:text-white/70">{value.scoreDescp}</p>
+                                                <p className="text-base text-secondary/70 ">{value.scoreDescp}</p>
                                             </div>
                                         )
                                     })}

@@ -10,7 +10,7 @@ const NewCourses = () => {
         // 1. Wrap the component in ParallaxProvider
         <ParallaxProvider>
             {/* Using a light background from your theme */}
-            <section className="bg-lightgray dark:bg-secondary py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray py-20 md:py-40 overflow-hidden">
                 <div className="container">
                     <div className="flex flex-col gap-16">
                         
@@ -43,11 +43,11 @@ const NewCourses = () => {
 
                             {/* --- Right Column: Text Content --- */}
                             <div className="w-full lg:w-1/2 flex flex-col items-start gap-5">
-                                <h4 className="text-2xl md:text-28 text-secondary dark:text-white">Seascape Resin</h4>
-                                <p className="text-base text-secondary/70 dark:text-white/70">
+                                <h4 className="text-2xl md:text-28 text-secondary ">Seascape Resin</h4>
+                                <p className="text-base text-secondary/70 ">
                                     10-18 Years Old
                                 </p>
-                                <p className="text-lg text-secondary/70 dark:text-white/70 leading-relaxed">
+                                <p className="text-lg text-secondary/70 leading-relaxed">
                                     A resin seascape is an artwork made by layering tinted 
                                     resin to depict ocean scenes like waves or beaches. 
                                     The glossy, durable finish enhances depth, texture, 
@@ -59,26 +59,26 @@ const NewCourses = () => {
                                 <ul className="flex flex-col gap-3 my-4">
                                     <li className="flex items-center gap-3">
                                         <Check className="w-5 h-5 text-primary" />
-                                        <span className="text-secondary/80 dark:text-white/80">Foundation 8-12 Sessions</span>
+                                        <span className="text-secondary/80">Foundation 8-12 Sessions</span>
                                     </li>
                                     <li className="flex items-center gap-3">
                                         <Check className="w-5 h-5 text-primary" />
-                                        <span className="text-secondary/80 dark:text-white/80">Intermediate 24 Sessions</span>
+                                        <span className="text-secondary/80">Intermediate 24 Sessions</span>
                                     </li>
                                     <li className="flex items-center gap-3">
                                         <Check className="w-5 h-5 text-primary" />
-                                        <span className="text-secondary/80 dark:text-white/80">Intermediate to Advanced 48 Sessions</span>
+                                        <span className="text-secondary/80">Intermediate to Advanced 48 Sessions</span>
                                     </li>
                                 </ul>
 
-                                <p className="text-base text-secondary/70 dark:text-white/70">
+                                <p className="text-base text-secondary/70 ">
                                     All art materials provided.
                                 </p>
                                 
                                 {/* VIEW MORE Link using theme color */}
                                 <Link 
                                     href="/projects" // You can change this link
-                                    className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 mt-4"
+                                    className="group flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300 mt-4"
                                 >
                                     <span className="text-sm font-bold uppercase tracking-wider">
                                         VIEW MORE

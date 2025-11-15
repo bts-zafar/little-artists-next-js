@@ -36,15 +36,15 @@ const WhatsGoingOn = () => {
     return (
         <ParallaxProvider>
             {/* Using theme's dark background */}
-            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray py-20 md:py-40 overflow-hidden">
                 <div className="container">
                     <Parallax speed={-5}>
                         {/* --- Section Header --- */}
                         <div className="flex items-center py-3 gap-4 md:gap-8 w-full mb-6">
-                            <span className="bg-primary dark:text-secondary py-1.5 px-3 text-base font-medium rounded-full">
+                            <span className="bg-primary  py-1.5 px-3 text-base font-medium rounded-full">
                                 {sectionData.sectionNumber}
                             </span>
-                            <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
+                            <div className="h-px w-16 bg-black/12 " />
                             <p className="section-bedge py-1.5 px-4 rounded-full">
                                 {sectionData.sectionBadge}
                             </p>
@@ -79,7 +79,7 @@ const WhatsGoingOn = () => {
                             {sectionData.slides.map((slide: any, index: number) => (
                                 <SwiperSlide key={index}>
                                     {/* Slide Content: 50/50 Grid */}
-                                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center bg-lightgray dark:bg-secondary rounded-lg overflow-hidden">
+                                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center bg-lightgray rounded-lg overflow-hidden">
                                         
                                         {/* Left Side: Image */}
                                         <div className="w-full lg:w-1/2 h-80 lg:h-[500px] relative">
@@ -93,18 +93,18 @@ const WhatsGoingOn = () => {
                                         
                                         {/* Right Side: Text */}
                                         <div className="w-full lg:w-1/2 flex flex-col items-start gap-5 p-8 lg:p-12">
-                                            <h3 className="text-2xl md:text-3xl text-secondary dark:text-white">
+                                            <h3 className="text-2xl md:text-3xl text-secondary ">
                                                 {slide.title}
                                             </h3>
-                                            <p className="text-sm font-medium text-secondary/70 dark:text-white/70">
+                                            <p className="text-sm font-medium text-secondary/70 ">
                                                 {slide.date}
                                             </p>
-                                            <p className="text-base text-secondary/70 dark:text-white/70">
+                                            <p className="text-base text-secondary/70 ">
                                                 {slide.description}
                                             </p>
                                             <Link 
                                                 href={slide.link}
-                                                className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 mt-4"
+                                                className="group flex items-center gap-2 text-primary hover:text-secondary  transition-colors duration-300 mt-4"
                                             >
                                                 <span className="text-sm font-bold uppercase tracking-wider">
                                                     SEE ALL EVENTS
