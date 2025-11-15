@@ -55,7 +55,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={manrope.className}>
         <SessionProvider>
-          <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light">
+          <ThemeProvider attribute="class" enableSystem={false} defaultTheme="light" forcedTheme="light">
             <CustomCursor /> {/* <-- 2. RENDER IT HERE */}
             {!hideLayout && <Header />}
             {children}
