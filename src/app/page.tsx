@@ -42,10 +42,10 @@ export default function Home() {
       <FeaturedArtists />
 
       {/* 7. Our Achievers */}
-      <OurAchievers />
+      {/* <OurAchievers /> */}
 
       {/* 8. Student Art Gallery */}
-      <StudentArtGallery />
+      {/* <StudentArtGallery /> */}
 
       {/* 9. Founder Section (50/50 Section + Parallax) */}
       <FounderSection />
