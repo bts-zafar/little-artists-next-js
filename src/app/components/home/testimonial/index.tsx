@@ -195,7 +195,7 @@ function Testimonial() {
                                 >
                                     <Image
                                         // NOTE: Replace this with your video thumbnail
-                                        src={"/images/home/resources/resources_4.png"} // <-- REPLACE THIS
+                                        src={"/images/home/statsfact/Screenshot 2024-02-22 at 10.02 1.png"} // <-- REPLACE THIS
                                         alt="Video thumbnail"
                                         layout="fill"
                                         objectFit="cover"

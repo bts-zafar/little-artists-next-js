@@ -44,7 +44,7 @@ const Resources = () => {
                                         <div className="flex flex-col gap-11 w-full">
                                             {/* --- MODIFIED: Header Row --- */}
                                             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                                                <h2 className="max-w-3xl text-white">Latest News</h2>
+                                                <h2 className="max-w-3xl">Latest News</h2>
                                                 <Link 
                                                     href="/blog" // Link to the blog page
                                                     className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300 flex-shrink-0"

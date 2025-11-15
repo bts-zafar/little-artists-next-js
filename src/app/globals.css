@@ -1,32 +1,46 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-@custom-variant dark (&:where(.dark, .dark *));
+/* --- NEW: Figma Color Palette --- */
+:root {
+  /* Main Colors */
+  --la-primary-blue-0: 36, 83, 255; /* rgb(36, 83, 255) */
+  --la-primary-white: 255, 255, 255; /* rgb(255, 255, 255) */
+  --la-tertiary-darkblue: 12, 15, 10; /* rgb(12, 15, 10) */
+  --black: 4, 4, 4; /* rgb(4, 4, 4) */
+  --80-black: 51, 51, 51; /* rgb(51, 51, 51) */
+  --70-black: 122, 122, 122; /* rgb(122, 122, 122) */
 
+  /* Accent Colors */
+  --secondary-green: 164, 190, 92; /* rgb(164, 190, 92) */
+  --brand-yellow: 244, 186, 101; /* rgb(244, 186, 101) */
+  
+  /* Tints */
+  --la-secondary-blue: 200, 211, 249; /* rgb(200, 211, 249) */
+  --la-secondary-60-blue: 218, 224, 251; /* rgb(218, 224, 251) */
+  --la-secondary-20-blue: 237, 240, 253; /* rgb(237, 240, 253) */
+}
+/* ------------------------------- */
+
+
+/* --- MODIFIED: Tailwind Theme (LIGHT MODE ONLY) --- */
 @theme {
   /* breakpoint */
-  --breakpoint-Xxl: 1440px; /*1440 px*/
+  --breakpoint-Xxl: 1440px;
   --breakpoint-2xl: 1536px;
   --breakpoint-xsm: 500px;
 
   /* color */
-  --color-primary: #C1FF72;
-  --color-secondary: #1F2A2E;
-  --color-lightgray: #F4F8FA;
-  --color-overlay: #000A0B99;
-  --color-darkblack: #273338;
-  --color-twilliteblack: #181f22;
-  --color-gray: #365564;
-
-  /* padding */
-  --spacing-35: 35rem; /*550px*/
-
-  /* text */
+  --color-primary: rgb(var(--la-primary-blue-0)); /* Blue */
+  --color-secondary: rgb(var(--80-black)); /* Dark Gray/Black */
+  --color-lightgray: rgb(var(--la-secondary-20-blue)); /* Lightest Blue */
+  --color-darkblack: rgb(var(--la-tertiary-darkblue)); /* Dark Blue/Black */
+  --color-gray: rgb(var(--70-black));
+  
+  /* ... (rest of your @theme block) ... */
+  --spacing-35: 35rem;
   --text-28: 28px;
   --text-56: 56px;
-
-  /* height */
   --height-80vh: 80vh;
   --height-70vh: 70vh;
   --height-50vh: 50vh;
@@ -40,6 +54,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  /* NEW: Set default font stack and background to white */
+  font-family: 'Sabon Next LT', 'Times New Roman', Georgia, serif;
+  background-color: rgb(var(--la-secondary-20-blue));
+  color: rgb(var(--80-black));
+  /* FIX: Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -55,97 +75,189 @@ body {
     @apply text-4xl md:text-5xl xl:text-7xl;
   }
 
+  /* MODIFIED: section-bedge now light blue bg with dark text */
   .section-bedge {
-    @apply text-base font-medium text-white bg-secondary dark:bg-white/10;
-  }
-
-  .project-descp p{
-    @apply text-secondary/70 dark:text-white/70 pt-2;
-  }
-
-  .project-descp h4{
-    @apply  pt-5;
-  }
-
-  .project-descp h5{
-    @apply  pt-4;
-  }
-
-  .blog-content p{
-    @apply text-secondary/70 dark:text-white/70;
-  }
-
-  .blog-content h4{
-    @apply mt-5 mb-3.5;
-  }
-
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .swiper-wrapper {
-    -webkit-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
-    position: relative;
-  }
-
-  .swiper-slide {
-    width: fit-content !important;
+    @apply text-base font-medium text-secondary bg-lightgray;
   }
 }
 
 @layer base {
+  /* MODIFIED: Base headings are now dark */
   h1 {
-    @apply text-9xl font-bold text-white;
+    @apply text-9xl font-bold text-secondary;
   }
 
   h2 {
-    @apply text-4xl md:text-5xl Xxl:text-[56px] font-bold leading-tight text-secondary dark:text-white;
+    @apply text-4xl md:text-5xl Xxl:text-[56px] font-bold leading-tight text-secondary;
   }
 
   h3 {
-    @apply text-28 Xxl:text-4xl font-bold text-secondary dark:text-white;
+    @apply text-28 Xxl:text-4xl font-bold text-secondary;
   }
 
   h4 {
-    @apply text-xl md:text-2xl lg:text-28 font-bold text-secondary dark:text-white;
+    @apply text-xl md:text-2xl lg:text-28 font-bold text-secondary;
   }
-
-  h5 {
-    @apply text-black dark:text-white;
-  }
-
-  h6 {
-    @apply text-black dark:text-white;
-  }
-
+  
   p {
-    @apply text-lg font-normal leading-normal text-black dark:text-white;
+    @apply text-lg font-normal leading-normal text-black;
   }
 }
 
-/* ... (keep all your existing styles) ... */
 
-/* --- Custom Cursor Styles --- */
+/* --- Custom Cursor (Color Updated) --- */
 .cursor-dot {
   position: fixed;
   top: 0;
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: #C1FF72;
+  background-color: rgb(var(--la-primary-blue-0)); /* NEW: Blue color */
   border-radius: 50%;
   z-index: 9999;
-  pointer-events: none; /* Allows you to click "through" it */
+  pointer-events: none;
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* This hides the custom cursor on mobile/touch devices */
 @media (max-width: 1024px) {
   .cursor-dot {
     display: none;
   }
+}
+/* ------------------------------- */
+
+
+/* --- NEW: CSS for Hero WebGL Slider --- */
+:root {
+  /* Using your Figma colors for the slider UI */
+  --font-mono: "PPSupplyMono", monospace; /* We don't have this font, will fall back */
+  --font-sans: "PP Neue Montreal", sans-serif; /* We don't have this font, will fall back */
+  --color-bg: rgb(var(--la-tertiary-darkblue)); /* Use new dark blue */
+  --color-text: rgb(var(--la-primary-white));
+  --color-text-muted: rgba(var(--la-primary-white), 0.8);
+  --color-text-light: rgba(var(--la-primary-white), 0.6);
+  --color-accent: rgb(var(--la-primary-white));
+  --font-size-mono: clamp(10px, 1.2vw, 12px);
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+}
+
+/* NEW: Responsive container for the hero */
+.hero-slider-container {
+  @apply relative w-full aspect-[3/4] md:aspect-auto md:h-screen overflow-hidden;
+}
+
+/* MODIFIED: Make the slider absolute within the container */
+.slider-wrapper {
+  @apply absolute top-0 left-0 w-full h-full;
+  /* (Original styles below) */
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  opacity: 0; /* Will be faded in by component */
+  transition: opacity 1.5s ease-in;
+  pointer-events: none;
+}
+
+.slider-wrapper.loaded {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.webgl-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-number {
+  position: absolute;
+  top: 50%;
+  left: var(--spacing-md);
+  transform: translateY(-50%);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  z-index: 3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.slide-total {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-md);
+  transform: translateY(-50%);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  z-index: 3;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.slides-navigation {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: var(--spacing-md);
+  right: var(--spacing-md);
+  display: flex;
+  gap: 0;
+  z-index: 3;
+  pointer-events: all;
+}
+
+.slide-nav-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  flex: 1;
+  border: none;
+  background: none;
+}
+
+.slide-progress-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: 8px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.slide-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--color-accent);
+  transition: width 0.1s ease, opacity 0.3s ease;
+  border-radius: 1px;
+}
+
+.slide-nav-title {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.slide-nav-item.active .slide-nav-title {
+  color: var(--color-text);
+}
+
+.help-text {
+  position: absolute;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  z-index: 3;
 }

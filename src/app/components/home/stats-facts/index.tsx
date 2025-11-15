@@ -38,7 +38,7 @@ function StatsFacts() {
         // 1. Wrap the component in ParallaxProvider
         <ParallaxProvider>
             {/* Kept original theme's bg colors and overflow-hidden */}
-            <section className="relative bg-white dark:bg-secondary overflow-hidden">
+            <section className="relative bg-lightgray dark:bg-secondary overflow-hidden">
                 <div className="relative py-20 md:py-40 z-10">
                     <div className="container">
                         <div className="flex flex-col xl:flex xl:flex-row items-start gap-8">

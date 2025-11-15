@@ -10,7 +10,7 @@ const FounderSection = () => {
         // 1. Wrap the component in ParallaxProvider
         <ParallaxProvider>
             {/* Using a standard background from your theme */}
-            <section className="bg-white dark:bg-darkblack py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40 overflow-hidden">
                 <div className="container">
                     <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
                         
@@ -27,7 +27,7 @@ const FounderSection = () => {
                             </div>
 
                             {/* Title from screenshot, styled with theme's primary color */}
-                            <h2 className="text-4xl md:text-5xl text-white"> 
+                            <h2 className="text-4xl md:text-5xl"> 
                                 Founder of Little Artists Studio
                             </h2>
 
@@ -64,7 +64,7 @@ const FounderSection = () => {
                                         and update this path. Using a placeholder for now.
                                     */}
                                     <Image
-                                        src={"/images/home/team/team-img-2.png"} // <-- REPLACE THIS
+                                        src={"/images/home/team/shalini photo 1 1.png"}
                                         alt="Ms Shalini Kapoor, Founder of Little Artists Studio"
                                         layout="fill"
                                         objectFit="cover"

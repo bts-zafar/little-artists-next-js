@@ -6,36 +6,36 @@ import { ArrowRight } from "lucide-react";
 // --- Program Card Sub-Component ---
 const ProgramCard = ({ program }: { program: any }) => {
     
-    // Logic to set colors based on accentType from our data file
-    let cardBg = "bg-lightgray dark:bg-secondary";
-    let titleColor = "text-secondary dark:text-white";
-    let textColor = "text-secondary/70 dark:text-white/70";
+    // NEW Logic for light theme
+    let cardBg = "bg-lightgray"; // var(--la-secondary-20-blue)
+    let titleColor = "text-secondary"; // var(--80-black)
+    let textColor = "text-gray"; // var(--70-black)
+    let inlineStyle = {};
 
     if (program.accentType === "primary") {
-        cardBg = "bg-primary";
-        titleColor = "text-secondary"; // Dark text on light green bg
-        textColor = "text-secondary/70";
-         // Make it stronger on the light bg
+        cardBg = "bg-primary"; // var(--la-primary-blue-0)
+        titleColor = "text-white";
+        textColor = "text-white/70";
     } else if (program.accentType === "medium") {
-        cardBg = "bg-primary/10 dark:bg-primary/20"; // Light green tint
-        titleColor = "text-secondary dark:text-white";
-        textColor = "text-secondary/70 dark:text-white/70";
-       
+        // Use inline style for secondary-green as it's not in tailwind config
+        cardBg = ""; // Remove default bg
+        inlineStyle = { backgroundColor: 'rgb(var(--secondary-green))' };
+        titleColor = "text-white";
+        textColor = "text-white/70";
     }
 
     return (
         <Link 
-            href={`/projects`} // You can make this link dynamic later
-            className={`group relative overflow-hidden h-64 p-6 rounded-lg flex flex-col justify-between transition-all duration-300 ease-in-out`}
+            href={`/projects`}
+            // MODIFIED: Added border and cardBg, removed background div
+            className={`group relative overflow-hidden h-64 p-6 rounded-lg flex flex-col justify-between 
+                       transition-all duration-300 ease-in-out border border-secondary ${cardBg}`}
+            style={inlineStyle}
         >
-            {/* --- Base Background Color --- */}
-            <div className={`absolute inset-0 z-0 ${cardBg} rounded-lg`}></div>
-
-            {/* --- Triangle Mosaic Hover Effect --- */}
+            {/* --- Triangle Mosaic Hover Effect (still commented out) --- */}
             <div 
                 className={`absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
                 style={{
-                    // Creates the cross-hatched triangle/diamond pattern using your theme's primary color
                     // backgroundImage: `repeating-linear-gradient(45deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 1px, transparent 8px),
                     //                 repeating-linear-gradient(-45deg, var(--color-primary) 0, var(--color-primary) 1px, transparent 1px, transparent 8px)`,
                     backgroundSize: '8px 8px'
@@ -79,21 +79,22 @@ function Services() {
     }, []);
 
     return (
-        // Using a light background to match the screenshot, but one from your theme
-        <section id="services" className="bg-white dark:bg-darkblack py-20 md:py-40">
+        // MODIFIED: Removed dark mode, set to lightest blue bg
+        <section id="services" className="bg-lightgray py-20 md:py-40">
             <div className="flex flex-col gap-16">
                 <div className="container">
                     
                     {/* --- Section Header --- */}
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-                        {/* Title is now text-primary (green) as requested */}
+                        {/* Title is now primary blue */}
                         <h2 className="text-4xl md:text-5xl text-primary">
                             {servicesData?.heading || 'Highlight Programs'}
                         </h2>
                         
                         <Link 
                             href="/projects" // You can change this link
-                            className="group flex items-center gap-2 text-primary hover:text-secondary dark:text-primary dark:hover:text-white transition-colors duration-300"
+                            // MODIFIED: Removed dark mode classes
+                            className="group flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-300"
                         >
                             <span className="text-sm font-bold uppercase tracking-wider">
                                 EXPLORE MORE PROGRAMS

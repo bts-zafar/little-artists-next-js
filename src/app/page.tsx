@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-// --- Components 1-10 ---
+// --- Component 1 ---
 import HeroSection from "./components/home/hero"; 
 import ExplorePrograms from "./components/home/explore-programs"; 
 import Services from "./components/home/services"; 
@@ -11,13 +11,8 @@ import FounderSection from "./components/home/founder-section";
 import StatsFacts from "./components/home/stats-facts"; 
 import AwardsSection from "./components/home/awards-section";
 import Testimonial from "./components/home/testimonial"; 
-
-// --- Component 12 (Re-using Resources) ---
-import Resources from "./components/home/resources"; // <-- ADD THIS IMPORT
-
-// --- Other Components (for later) ---
-// import Team from "./components/home/team";
-// import Portfolio from "./components/home/portfolio";
+import WhatsGoingOn from "./components/home/whats-going-on";
+import Resources from "./components/home/resources"; 
 
 export const metadata: Metadata = {
     title: "Little Artists Studio | Home",
@@ -26,7 +21,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      {/* 1. Hero Section (Video BG + Parallax) */}
+      {/* 1. Hero Section (NEW WebGL Carousel) */}
       <HeroSection /> 
       
       {/* 2. Explore Our Programs (Text/Image + Parallax) */}
@@ -57,10 +52,10 @@ export default function Home() {
       <Testimonial />
 
       {/* 11. "What's going on" (Carousel + Parallax) */}
-      {/* We skipped this one in the end, as it was replaced by "Latest News" */}
+      <WhatsGoingOn />
 
       {/* 12. Latest News (List layout + Parallax) */}
-      <Resources /> {/* <-- ADD THIS LINE */}
+      <Resources />
     </>
   );
 }

@@ -36,7 +36,7 @@ const WhatsGoingOn = () => {
     return (
         <ParallaxProvider>
             {/* Using theme's dark background */}
-            <section className="bg-white dark:bg-darkblack py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40 overflow-hidden">
                 <div className="container">
                     <Parallax speed={-5}>
                         {/* --- Section Header --- */}

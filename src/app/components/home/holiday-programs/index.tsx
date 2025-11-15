@@ -19,7 +19,7 @@ const HolidayPrograms = () => {
                             
                             {/* Section Header (from image_681cdc.png) */}
                             <div className="flex items-center py-3 gap-4 md:gap-8 w-full">
-                                <span className="bg-primary dark:text-secondary py-1.5 px-3 text-base font-medium rounded-full">03</span>
+                                <span className="bg-primary dark:text-secondary py-1.5 px-3 text-base font-medium rounded-full">02</span>
                                 <div className="h-px w-16 bg-black/12 dark:bg-white/12" />
                                 <p className="section-bedge py-1.5 px-4 rounded-full">
                                     Short Courses
@@ -27,7 +27,7 @@ const HolidayPrograms = () => {
                             </div>
 
                             {/* Title from screenshot, styled with theme's primary color */}
-                            <h2 className="text-4xl md:text-5xl text-white leading-tight">
+                            <h2 className="text-4xl md:text-5xl leading-tight">
                                 Holiday Programs/ <br />
                                 Short Courses
                             </h2>
@@ -54,7 +54,7 @@ const HolidayPrograms = () => {
                                       (PNG or SVG) of the triangle collage from your Figma.
                                     */}
                                     <Image
-                                        src={"/images/home/portfolio/portfolio_img_1.png"} // <-- REPLACE THIS
+                                        src={"/images/home/portfolio/a889c123-6b30-4267-ad32-e61d22fd6b34.jpeg"} 
                                         alt="Holiday Programs Mosaic"
                                         layout="fill"
                                         objectFit="cover"

@@ -31,7 +31,7 @@ const NewCourses = () => {
                                           Replace the 'src' path with the "Seascape Resin" image.
                                         */}
                                         <Image
-                                            src={"/images/home/resources/resources_3.png"} // <-- REPLACE THIS
+                                            src={"/images/home/portfolio/pexels-thirdman-7256621.png"} 
                                             alt="Seascape Resin Course"
                                             layout="fill"
                                             objectFit="cover"

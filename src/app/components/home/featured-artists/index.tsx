@@ -27,7 +27,7 @@ const ArtistCard = ({ artist }: { artist: any }) => (
             <h4 className="text-xl font-bold text-secondary">
                 {artist.name}
             </h4>
-            <p className="text-sm text-secondary/70 mt-1">
+            <p className="text-sm text-white mt-1">
                 {artist.description}
             </p>
         </div>
@@ -58,7 +58,7 @@ const FeaturedArtists = () => {
     // Show a loading state
     if (isLoading) {
         return (
-            <section className="bg-white dark:bg-darkblack py-20 md:py-40">
+            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
                 <div className="container">
                     <p className="text-secondary dark:text-white">Loading artists...</p>
                 </div>
@@ -69,7 +69,7 @@ const FeaturedArtists = () => {
     // Show an error if data is missing
     if (!artistsData || !artistsData.data || artistsData.data.length === 0) {
          return (
-            <section className="bg-white dark:bg-darkblack py-20 md:py-40">
+            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
                 <div className="container">
                      {/* --- Section Header --- */}
                      <div className="flex items-center py-3 gap-4 md:gap-8 w-full mb-6">
@@ -97,7 +97,7 @@ const FeaturedArtists = () => {
     return (
         <ParallaxProvider>
             {/* Using theme's dark background */}
-            <section className="bg-white dark:bg-darkblack py-20 md:py-40">
+            <section className="bg-lightgray dark:bg-darkblack py-20 md:py-40">
                 <div className="container">
                     {/* Parallax for the whole section */}
                     <Parallax speed={-5}>
