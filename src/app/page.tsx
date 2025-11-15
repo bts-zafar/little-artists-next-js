@@ -13,6 +13,8 @@ import AwardsSection from "./components/home/awards-section";
 import Testimonial from "./components/home/testimonial"; 
 import WhatsGoingOn from "./components/home/whats-going-on";
 import Resources from "./components/home/resources"; 
+import OurAchievers from "./components/home/our-achievers";
+import StudentArtGallery from "./components/home/student-art-gallery";
 
 export const metadata: Metadata = {
     title: "Little Artists Studio | Home",
@@ -39,22 +41,28 @@ export default function Home() {
       {/* 6. Featured Artists (Marquee + Parallax) */}
       <FeaturedArtists />
 
-      {/* 7. Founder Section (50/50 Section + Parallax) */}
+      {/* 7. Our Achievers */}
+      <OurAchievers />
+
+      {/* 8. Student Art Gallery */}
+      <StudentArtGallery />
+
+      {/* 9. Founder Section (50/50 Section + Parallax) */}
       <FounderSection />
 
-      {/* 8. Stats Section (Original theme layout + Parallax) */}
+      {/* 10. Stats Section (Original theme layout + Parallax) */}
       <StatsFacts />
 
-      {/* 9. Awards and Recognition (Static) */}
+      {/* 11. Awards and Recognition (Static) */}
       <AwardsSection />
 
-      {/* 10. Testimonials + Video (Combined) */}
+      {/* 12. Testimonials + Video (Combined) */}
       <Testimonial />
 
-      {/* 11. "What's going on" (Carousel + Parallax) */}
+      {/* 13. "What's going on" (Carousel + Parallax) */}
       <WhatsGoingOn />
 
-      {/* 12. Latest News (List layout + Parallax) */}
+      {/* 14  . Latest News (List layout + Parallax) */}
       <Resources />
     </>
   );

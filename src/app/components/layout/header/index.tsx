@@ -1,8 +1,9 @@
+"use client";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import MenuList from "./MenuList";
 import Link from "next/link";
-import ThemeToggler from "./ThemeToggle";
+// import ThemeToggler from "./ThemeToggle"; // Removed
 import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -13,7 +14,7 @@ const Header = () => {
     const [user, setUser] = useState<{ user: any } | null>(null);
     const [menuData, setMenuData] = useState<any>(null);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isClosing, setIsClosing] = useState(false); // Track closing animation
+    const [isClosing, setIsClosing] = useState(false);
     const [sticky, setSticky] = useState(false);
     const pathname = usePathname();
     const menuRef = useRef<HTMLDivElement>(null);
@@ -39,15 +40,14 @@ const Header = () => {
         setUser(null);
     };
 
-    // Close menu with animation when clicking outside
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-                setIsClosing(true); // Start closing animation
+                setIsClosing(true);
                 setTimeout(() => {
-                    setMenuOpen(false); // Hide menu after animation
+                    setMenuOpen(false);
                     setIsClosing(false);
-                }, 300); // Adjust timing to match animation duration
+                }, 300);
             }
         };
 
@@ -73,14 +73,25 @@ const Header = () => {
     }, [menuOpen]);
 
     return (
-        <header className={`fixed top-0 z-50 w-full border-t-4 border-primary transition-all duration-500 ease-in-out before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-0 before:bg-primary before:transition-all before:duration-500 before:ease-in-out ${sticky ? "before:h-full" : "before:h-0"}`}>
+        // --- MODIFIED: Blue bar is now always visible. 
+        // --- Removed 'before:' classes.
+        <header className={`fixed top-0 z-50 w-full border-t-4 border-primary transition-all duration-500 ease-in-out`}>
+            
+            {/* --- ADDED: Background element for sticky state --- */}
+            {/* This adds a white bg on scroll, but keeps the top bar blue */}
+            <div 
+                className={`absolute inset-0 w-full h-full bg-white shadow-md transition-opacity duration-500 ease-in-out
+                ${sticky ? 'opacity-100' : 'opacity-0'}`}
+                style={{ zIndex: -1 }} // Place it behind the content
+            ></div>
+
             <div className="container">
-                <nav className={`relative flex item-center justify-between ${sticky ? 'py-5' : 'py-7'}`}>
+                <nav className={`relative flex items-center justify-between ${sticky ? 'py-5' : 'py-7'}`}>
                     <div className='flex items-center'>
                         <Logo sticky={sticky} />
                     </div>
                     <div className="flex items-center gap-7">
-                        <div className="flex item-center gap-3">
+                        <div className="flex items-center gap-3">
                             {/* <ThemeToggler /> */}
                             {user?.user || session?.user ? (
                                 <div className="relative group flex items-center justify-center">
@@ -111,14 +122,15 @@ const Header = () => {
                                 :
                                 <div
                                     ref={menuRef}
-                                    className={`absolute -top-5 right-0 flex flex-col gap-5 min-w-80 sm:min-w-96 bg-white dark:bg-twilliteblack p-6 rounded-3xl shadow-lg transition-all duration-300 ease-in-out z-10 
+                                    // MODIFIED: Removed dark:bg-twilliteblack
+                                    className={`absolute -top-5 right-0 flex flex-col gap-5 min-w-80 sm:min-w-96 bg-white p-6 rounded-3xl shadow-lg transition-all duration-300 ease-in-out z-10 
                                     ${isClosing ? "opacity-0 scale-95" : "opacity-100 scale-100"}`}
                                 >
-                                    <div className="flex items-center justify-between pb-5 border-b border-secondary/15 dark:border-white/15">
-                                        <p className="text-secondary dark:text-white">Menu</p>
+                                    <div className="flex items-center justify-between pb-5 border-b border-secondary/15">
+                                        <p className="text-secondary">Menu</p>
                                         <div onClick={() => setMenuOpen(false)} className="p-2 cursor-pointer">
-                                            <Image src="/images/Icon/close-icon.svg" alt="icon" width={16} height={16} className="dark:hidden" />
-                                            <Image src="/images/Icon/close-icon-dark.svg" alt="icon" width={16} height={16} className="hidden dark:block" />
+                                            {/* MODIFIED: Removed dark mode icon */}
+                                            <Image src="/images/Icon/close-icon.svg" alt="icon" width={16} height={16} />
                                         </div>
                                     </div>
                                     <div>
@@ -130,14 +142,16 @@ const Header = () => {
 
                                         {user?.user || session?.user ? (
                                             <div className="flex flex-col gap-2">
-                                                <button onClick={() => handleSignOut()} className="flex justify-center items-center cursor-pointer gap-2 text-secondary hover:text-white dark:border dark:border-primary dark:hover:text-white bg-primary dark:hover:bg-transparent dark:hover:border dark:hover:border-white hover:bg-secondary text-xl font-bold rounded-full py-2.5 px-4.5 transition-all duration-300 ease-in-out">
+                                                {/* MODIFIED: Removed dark mode classes, new theme */}
+                                                <button onClick={() => handleSignOut()} className="flex justify-center items-center cursor-pointer gap-2 text-white hover:text-white bg-primary hover:bg-secondary text-xl font-bold rounded-full py-2.5 px-4.5 transition-all duration-300 ease-in-out">
                                                     Sign Out
                                                     <Icon icon="solar:logout-outline" width="25" height="25" />
                                                 </button>
                                             </div>
                                         ) : (
                                             <div className="flex gap-3">
-                                                <Link href={"/signin"} className="flex justify-center items-center gap-2 w-full text-secondary dark:text-white text-xl font-bold rounded-full border border-secondary/20 dark:border-white py-1.5 px-4.5 hover:bg-secondary/15">
+                                                {/* MODIFIED: Removed dark mode classes, new theme */}
+                                                <Link href={"/signin"} className="flex justify-center items-center gap-2 w-full text-secondary text-xl font-bold rounded-full border border-secondary/20 py-1.5 px-4.5 hover:bg-secondary/15">
                                                     Sign In
                                                 </Link>
                                                 <Link href={"/signup"} className="flex justify-center items-center gap-2 w-full text-white text-xl font-bold rounded-full bg-secondary py-2 px-4.5 hover:bg-secondary/90">
@@ -147,7 +161,8 @@ const Header = () => {
                                         )}
                                     </div>
                                     <div>
-                                        <Link href="tel:+1-212-456-7890" className="text-secondary/60 dark:text-white/60 hover:text-secondary dark:hover:text-white">+1-212-456-7890</Link>
+                                        {/* MODIFIED: Removed dark mode classes, new theme */}
+                                        <Link href="tel:+1-212-456-7890" className="text-secondary/60 hover:text-secondary">+1-212-456-7890</Link>
                                         <Link href="mailto:info@wrappixel.com"><h4>info@wrappixel.com</h4></Link>
                                     </div>
                                 </div>

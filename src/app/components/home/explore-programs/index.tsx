@@ -24,13 +24,13 @@ const ExplorePrograms = () => {
     }, []);
 
     if (!exploreProgramsData) {
-        return <section className="bg-white py-20 md:py-40"></section>; // Return empty space while loading
+        return <section className="bg-lightgray py-20 md:py-40"></section>; 
     }
 
     return (
         <ParallaxProvider>
             {/* MODIFIED: Using theme's white bg, removed dark mode */}
-            <section className="bg-white py-20 md:py-40 overflow-hidden">
+            <section className="bg-lightgray py-20 md:py-40 overflow-hidden">
                 <div className="container">
                     <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
                         

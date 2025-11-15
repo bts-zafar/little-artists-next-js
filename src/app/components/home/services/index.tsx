@@ -107,7 +107,8 @@ function Services() {
 
                 {/* --- 4x2 Programs Grid --- */}
                 <div className="container">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7">
+                    {/* MODIFIED: Changed grid-cols-1 to grid-cols-2 */}
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-7">
                         {servicesData?.data.map((item: any, index: any) => (
                            <ProgramCard key={index} program={item} />
                         ))}
