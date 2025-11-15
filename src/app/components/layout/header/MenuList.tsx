@@ -30,7 +30,7 @@ const MenuList = ({ item, closeMenu }: { item: any, closeMenu: any }) => {
                     className="animate-spin hidden dark:block"
                 />
             </div>
-            <Link href={path} onClick={closeMenu} className="text-secondary dark:text-white text-2xl font-bold" target={newTab ? "_blank" : "_self"}>
+            <Link href={path} onClick={closeMenu} className="text-secondary text-2xl font-bold" target={newTab ? "_blank" : "_self"}>
                 {title}
             </Link>
         </li>
